@@ -1,28 +1,31 @@
-import React from 'react'
-import './App.css'
-import Header from './Header'
-import Home from './Home'
-import Checkout from './Checkout'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import React from "react";
+import "./App.css";
+import Header from "./Header";
+import Home from "./Home";
+import Checkout from "./Checkout";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Login from "./Login";
 
 function App() {
   return (
     <Router>
-      <div className='app'>
-        <Header />
+      <div className="app">
         <Switch>
-          <Route path='/checkout'>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/checkout">
+            <Header />
             <Checkout />
           </Route>
-          <Route path='/'>
-            {' '}
-            {/* Always make sure default is at the bottom */}
-            <Home />
+          <Route path="/">
+            <Header />
+            <Home /> {/* Always make sure default is at the bottom */}
           </Route>
         </Switch>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
