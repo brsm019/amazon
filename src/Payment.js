@@ -1,20 +1,17 @@
 import { useElements, useStripe, CardElement } from '@stripe/react-stripe-js'
-import axios from 'axios'
+import axios from './axios'
 import React, { useEffect, useState } from 'react'
 import CurrencyFormat from 'react-currency-format'
 import { Link, useHistory } from 'react-router-dom'
 import CheckoutProduct from './CheckoutProduct'
 import './Payment.css'
 import { useStateValue } from './StateProvider'
+import {getBasketTotal} from "./reducer"
 
 const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue()
   const history = useHistory()
 
-  const getBasketTotal = basket?.reduce(
-    (amount, item) => item.price + amount,
-    0
-  )
 
   const stripe = useStripe()
   const elements = useElements()
@@ -30,13 +27,16 @@ const Payment = () => {
     const getClientSecret = async () => {
       const response = await axios({
         method: 'post',
-        url: `/payments/create?total=${getBasketTotal * 100}`,
+        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       })
       setClientSecret(response.data.clientSecret)
     }
 
     getClientSecret()
-  }, [getBasketTotal])
+  }, [basket])
+
+  console.log('The secret >>>', clientSecret)
+  console.log(getBasketTotal(basket))
 
   const handleSubmit = async (event) => {
     //Stripe handle
@@ -112,7 +112,7 @@ const Payment = () => {
                     </>
                   )}
                   decimalScale={2}
-                  value={getBasketTotal}
+                  value={getBasketTotal(basket)}
                   displayType={'text'}
                   thousandSeparator={true}
                   prefix={'$'}
