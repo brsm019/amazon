@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useEffect } from 'react'
 import './App.css'
 import Header from './Header'
@@ -12,20 +12,7 @@ import { useStateValue } from './StateProvider'
 import Payment from './Payment'
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
-=======
-import React, { useEffect } from "react";
-import "./App.css";
-import Header from "./Header";
-import Home from "./Home";
-import Checkout from "./Checkout";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Login from "./Login";
-import { auth } from "./Firebase";
-import { useStateValue } from "./StateProvider";
-import Payment from "./Payment";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
->>>>>>> 6b8240e4326a42734e852973af5e7a100e6c916c
+
 
 const promise = loadStripe(
   "pk_test_51IyCkCGDpXfgd5NmOHuT8e4kjdQzVsiCukFamLb38M3B7U6wO2Dny52ihaIBs73pfIrhvgl3FzmtSqRqfiNzwtjO00PBSfGMJE"
@@ -56,15 +43,12 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-<<<<<<< HEAD
           <Route path='/orders'>
           <Header />
             <Orders />
           </Route>
           <Route path='/login'>
-=======
-          <Route path="/login">
->>>>>>> 6b8240e4326a42734e852973af5e7a100e6c916c
+
             <Login />
           </Route>
           <Route path="/checkout">

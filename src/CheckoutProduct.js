@@ -2,14 +2,11 @@ import React, { forwardRef } from "react";
 import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
 
-<<<<<<< HEAD
-function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
-  const [{ basket }, dispatch] = useStateValue()
-=======
+
 const CheckoutProduct = forwardRef(
-  ({ id, image, title, price, rating }, ref) => {
+  ({ id, image, title, price, rating, hideButton }, ref) => {
     const [{ basket }, dispatch] = useStateValue();
->>>>>>> 6b8240e4326a42734e852973af5e7a100e6c916c
+
 
     // const FunctionalArticle = forwardRef((props, ref) => (
     //   <div ref={ref}>
@@ -47,10 +44,8 @@ const CheckoutProduct = forwardRef(
           </div>
           <button onClick={removeFromBasket}>Remove from Basket</button>
         </div>
-<<<<<<< HEAD
         {!hideButton && (<button onClick={removeFromBasket}>Remove from Basket</button>)}
-=======
->>>>>>> 6b8240e4326a42734e852973af5e7a100e6c916c
+
       </div>
     );
   }
