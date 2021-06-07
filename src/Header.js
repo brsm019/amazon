@@ -29,7 +29,7 @@ const Header = () => {
         <SearchIcon className="header__searchIcon" />
       </div>
       <div class="header__nav">
-        <Link to={!user && '/login'}>
+        <Link to={!user && '/login'} class="header__link">
         <div onClick={handleAuthentication}>
           <div class="header__option">
           
@@ -39,7 +39,7 @@ const Header = () => {
             </div>
           </div>
         </Link>
-        <Link to='/orders'>
+        <Link to='/orders' class="header__link">
         <div class="header__option">
           <span class="header__optionLineOne">Returns</span>
           <span class="header__optionLineTwo">& Orders</span>

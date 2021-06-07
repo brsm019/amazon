@@ -42,9 +42,9 @@ const CheckoutProduct = forwardRef(
                 <p>🌟</p>
               ))}
           </div>
-          <button onClick={removeFromBasket}>Remove from Basket</button>
+          {!hideButton && (<button onClick={removeFromBasket}>Remove from Basket</button>)}
         </div>
-        {!hideButton && (<button onClick={removeFromBasket}>Remove from Basket</button>)}
+        
 
       </div>
     );

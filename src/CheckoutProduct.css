@@ -30,3 +30,11 @@
   font-size: 17px;
   font-weight: 800;
 }
+
+.header__optionLineOne {
+  text-decoration: none;
+}
+
+.header__optionLineTwo {
+  text-decoration: none;
+}

@@ -32,11 +32,13 @@
 
 .header__optionLineOne {
     font-size: 10px;
+    text-decoration: none;
 }
 
 .header__optionLineTwo {
     font-size: 13px;
     font-weight: 800;
+    text-decoration: none;
 }
 
 .header__optionBasket {
@@ -67,4 +69,8 @@
     flex-direction: column;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.header__link {
+    text-decoration: none;
 }
