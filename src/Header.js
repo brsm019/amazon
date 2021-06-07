@@ -39,14 +39,17 @@ const Header = () => {
             </div>
           </div>
         </Link>
+        <Link to='/orders'>
         <div class="header__option">
           <span class="header__optionLineOne">Returns</span>
           <span class="header__optionLineTwo">& Orders</span>
         </div>
+        </Link>
         <div class="header__option">
           <span class="header__optionLineOne">Your</span>
           <span class="header__optionLineTwo">Prime</span>
         </div>
+        
         <Link to="/checkout">
           <div class="header__optionBasket">
             <ShoppingBasketIcon />

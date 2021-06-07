@@ -7,6 +7,7 @@ import CheckoutProduct from './CheckoutProduct'
 import './Payment.css'
 import { useStateValue } from './StateProvider'
 import {getBasketTotal} from "./reducer"
+import {db} from './Firebase'
 
 const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue()
@@ -51,9 +52,21 @@ const Payment = () => {
       })
       .then(({ paymentIntent }) => {
         //paymentIntent = paymentConfirmation
+
+        db.collection('users').doc(user?.uid).collection('orders').doc(paymentIntent.id).set({
+          basket: basket,
+          amount: paymentIntent.amount,
+          created: paymentIntent.created
+        })
+
+
         setSucceeded(true)
         setError(null)
         setProcessing(false)
+
+        dispatch({
+          type: 'EMPTY_BASKET'
+        })
 
         history.replace('/orders') // send to orders page after payment made
       })
