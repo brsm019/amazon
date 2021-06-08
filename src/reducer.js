@@ -1,6 +1,7 @@
 export const initialState = {
   basket: [],
   user: null,
+  searchProduct: "",
 }
 
 export const getBasketTotal = (basket) => basket?.reduce(
@@ -14,6 +15,19 @@ const reducer = (state, action) => {
         ...state,
         basket: [...state.basket, action.item],
       }
+
+      case 'ADD_SEARCH_INPUT':
+
+        let len = state.searchProduct.length
+
+        let newSearch = [...state.searchProduct]
+
+        len > 0 && newSearch.splice(len,1)
+    
+        return {
+          ...state,
+          searchProduct: [newSearch, action.inputValue]
+        }
 
     case 'REMOVE_FROM_BASKET':
       const index = state.basket.findIndex(

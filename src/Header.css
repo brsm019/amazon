@@ -28,6 +28,7 @@
     padding: 10px;
     border: none;
     width: 100%;
+    outline:none;
 }
 
 .header__optionLineOne {
@@ -74,3 +75,10 @@
 .header__link {
     text-decoration: none;
 }
+
+.header__search__button {
+    background-color: #cd9042;
+    cursor:pointer;
+    text-decoration: none;
+    outline: none;
+  }
