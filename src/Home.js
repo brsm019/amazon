@@ -27,6 +27,7 @@ const Home = () => {
 
   //Only show the filtered product
 
+  // eslint-disable-next-line no-lone-blocks
   {
     if (searchProduct[1] === undefined) {
       return (
