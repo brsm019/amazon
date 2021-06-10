@@ -6,13 +6,12 @@ import { Link, useHistory } from 'react-router-dom'
 import CheckoutProduct from './CheckoutProduct'
 import './Payment.css'
 import { useStateValue } from './StateProvider'
-import {getBasketTotal} from "./reducer"
-import {db} from './Firebase'
+import { getBasketTotal } from './reducer'
+import { db } from './Firebase'
 
 const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue()
   const history = useHistory()
-
 
   const stripe = useStripe()
   const elements = useElements()
@@ -21,7 +20,7 @@ const Payment = () => {
   const [processing, setProcessing] = useState('')
   const [error, setError] = useState(null)
   const [disabled, setDisabled] = useState(true)
-  const [clientSecret, setClientSecret] = useState("")
+  const [clientSecret, setClientSecret] = useState('')
 
   useEffect(() => {
     //Generate stripe secret to charge a customer
@@ -53,19 +52,22 @@ const Payment = () => {
       .then(({ paymentIntent }) => {
         //paymentIntent = paymentConfirmation
 
-        db.collection('users').doc(user?.uid).collection('orders').doc(paymentIntent.id).set({
-          basket: basket,
-          amount: paymentIntent.amount,
-          created: paymentIntent.created
-        })
-
+        db.collection('users')
+          .doc(user?.uid)
+          .collection('orders')
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          })
 
         setSucceeded(true)
         setError(null)
         setProcessing(false)
 
         dispatch({
-          type: 'EMPTY_BASKET'
+          type: 'EMPTY_BASKET',
         })
 
         history.replace('/orders') // send to orders page after payment made
@@ -128,7 +130,7 @@ const Payment = () => {
                   value={getBasketTotal(basket)}
                   displayType={'text'}
                   thousandSeparator={true}
-                  prefix={'$'}
+                  prefix={'£'}
                 />
                 <button disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>Processing</p> : 'Buy Now'} </span>
