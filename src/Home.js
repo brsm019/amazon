@@ -9,6 +9,7 @@ const Home = () => {
   const [{ searchProduct }] = useStateValue();
 
   console.log(searchProduct[1]);
+  console.log(Product);
 
   //Only show the filtered product
 
@@ -22,14 +23,17 @@ const Home = () => {
         />
       </div>
       {products
-        .filter((search) => {
-          if (search === undefined) {
-            return search;
-          } else if (search.title.toLowerCase().includes(searchProduct[1])) {
-            return search;
-          } else if (search === "") {
-            return search;
-          }
+        ?.filter((product) => {
+          console.log(searchProduct[1])
+          console.log(product.title)
+          if (searchProduct[1] === undefined) {
+            return product;
+          } else if (product.title.toLowerCase().includes(searchProduct[1])) {
+            return product;
+          }  else if (searchProduct[1] === "") {
+            return product;
+          } 
+  
         })
         .map((product) => (
           <div className="home__row">
