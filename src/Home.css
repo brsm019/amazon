@@ -6,17 +6,28 @@
   max-width: 1500px;
 }
 
+.home__rows {
+  max-width: 1500px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .home__row {
   display: flex;
   z-index: 1;
   margin-left: 5px;
   margin-right: 5px;
+  width: 40%;
+  justify-content: center;
 }
 
 .home__image {
   width: 100%;
+  position: sticky;
   z-index: -1;
   margin-bottom: -150px; /* Elements below will creep in */
   mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent);
 }
-
