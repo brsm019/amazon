@@ -8,7 +8,7 @@ View deployed site here: https://fir-cccd0.firebaseapp.com/payment
 
 ## Details
 
-Full-stack application clone of Amazon web store 
+Full-stack application clone of Amazon web store.
 
 ## Client side built with
 - React
