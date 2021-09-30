@@ -36,7 +36,7 @@ Full-stack application clone of Amazon web store.
 ### Frontend
 The frontend was created with the React, utilising the component based build, creating reusable components that are used throughout the site. React Router was used to make multiple pages and in order to maintain state throughout the site a global state was created with useReducer and context API.
 ### Backend
-The backend was created with firebase store and the Stripe API.
+The backend was created with Firebase store and the Stripe API.
 
 ## Quick Start
 
