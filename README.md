@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Colmore Coffee / eCommerce site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+View deployed site here: https://fir-cccd0.firebaseapp.com/payment
 
-## Available Scripts
+## Desktop View
+<img width="1434" alt="Screenshot 2021-09-30 at 20 41 07" src="https://user-images.githubusercontent.com/70659641/135520834-ad16a7f6-fe88-40f9-8ee3-de208ec9c99a.png">
+<img width="1429" alt="Screenshot 2021-09-30 at 20 41 53" src="https://user-images.githubusercontent.com/70659641/135520933-02214b2c-ea32-4c42-acd8-fb203e452eb6.png">
 
-In the project directory, you can run:
+## Details
 
-### `npm start`
+Full-stack application clone of Amazon web store 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Client side built with
+- React
+- React Router
+- React Flip Move
+- useReducer & Context API
+- Materila UI
+- Moment
+- Stripe API
+- Axios
+- JSX
+- JavaScript
+- HTML
+- CSS
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Server side built with
+- Axios
+- CORS
+- Firebase Store
+- Express
+- Node
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Frontend
+The frontend was created with the React, utilising the component based build, creating reusable components that are used throughout the site. React Router was used to make multiple pages and in order to maintain state throughout the site a global state was created with useReducer and context API.
+### Backend
+The backend was created with firebase store and the Stripe API.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Quick Start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone down the repo. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Port set to 3000.
 
-### `npm run eject`
+```
+# Install dependencies for server
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Install dependencies for client
+npm run start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
