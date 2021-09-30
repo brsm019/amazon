@@ -1,4 +1,4 @@
-# Colmore Coffee / eCommerce site
+# Amazon Web Store / eCommerce site
 
 View deployed site here: https://fir-cccd0.firebaseapp.com/payment
 
